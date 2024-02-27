@@ -3,6 +3,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('randomnumber/', views.models_list)]
-    # path('', views.homepage)
+    path('model_list', views.models_list),
+    path('post_list/', views.post_list)
+    ]
 

@@ -13,3 +13,12 @@ def models_list(request):
         return HttpResponse(f"Testing of views {random_n}")
 
 
+def post_list(request):
+    counter = 1
+    while True:
+        random_n = random.randint(1, 100)
+        if counter % 5 == 0 and random_n % 2 == 1:
+            random_n += 1  # Zvýšíme liché číslo o 1, aby bylo sudé
+        counter += 1
+        num = random_n
+        return render(request, 'blog/post_list.html', {"vara":num})
